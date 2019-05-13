@@ -1,0 +1,82 @@
+<div class="container">
+<h1 class="text-center mb-5">Contacts</h1>
+
+<!-- Extended default form grid -->
+<form (ngSubmit)="add()" #f="ngForm">
+  <!-- Grid row -->
+  <div class="form-row">
+
+    <!-- Default input -->
+    <div class="form-group col-md-6 text-center">
+
+      <label for="Voornaam">Voornaam</label>
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-3">
+      <input mdbInput type="text" class="form-control" id="Voornaam" name="voornaam" placeholder="Voornaam" [(ngModel)]="contact.voornaam" #voornaam="ngModel"required>
+
+    </div>
+  </div>
+  <!-- Grid row -->
+  <div class="form-row">
+
+    <!-- Default input -->
+    <div class="form-group col-md-6 text-center">
+
+      <label for="Achternaam">Achternaam
+      </label>
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-3">
+      <input mdbInput type="text" class="form-control" id="Achternaam" name="achternaam" placeholder="Achternaam" [(ngModel)]="contact.achternaam" #achternaam="ngModel"required>
+
+    </div>
+  </div>
+  <!-- Grid row -->
+  <div class="form-row">
+
+    <!-- Default input -->
+    <div class="form-group col-md-6 text-center">
+
+      <label for="URL">URL van de afbeelding
+      </label>
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-3">
+      <input mdbInput type="text" class="form-control" id="afbeelding" name="afbeelding" placeholder="URL" [(ngModel)]="contact.afbeelding" #afbeelding="ngModel"required>
+
+    </div>
+  </div>
+  <!-- Grid row -->
+  <div class="form-row">
+
+    <!-- Default input -->
+    <div class="form-group col-md-6 text-center">
+
+      <label for="Telefoonnummer">Telefoonnummer</label>
+    </div>
+    <!-- Default input -->
+    <div class="form-group col-md-3">
+      <input mdbInput type="text" class="form-control" id="Telefoonnummer" name="telefoon" placeholder="Telefoonnummer" [(ngModel)]="contact.telefoon" #telefoon="ngModel" required>
+
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6"></div>
+    <div class="form-group col-md-6">
+      <button type="submit" class="btn btn-primary btn-md" style="width: 75px">+</button>
+    </div>
+  </div>
+</form>
+
+<div class="row"></div>
+<div class="card ml-3" *ngFor="let contact of contacts" style="width: 18rem;">
+    <img class="card-img-top" src={{contact.afbeelding}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{contact.voornaam}} {{contact.achternaam}}</h5>
+      <p class="card-text">{{contact.telefoon}}</p>
+    </div>
+  </div>
+
+
+</div>
